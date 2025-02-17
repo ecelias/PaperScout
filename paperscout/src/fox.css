@@ -1,0 +1,183 @@
+
+  .fox{
+      width: 107.5px;
+      height: 137.5px;
+      display: block;
+      margin: 0 auto; /* Centers it horizontally */
+      top: 50%;
+      position: relative;
+  }
+  .fox .head{
+      width: 92px;
+      height: 92px;
+      display: block;
+      background: #596ab4;
+      border-radius: 50%;
+      position: absolute;
+      z-index: 2;
+      top: 0px;
+      right: 0px;
+      overflow: hidden;
+  }
+  .fox .head:before, .fox .head:after{
+      content: '';
+      width: 92px;
+      height: 92px;
+      display: block;
+      background: #cdd1e8;
+      border-radius: 50%;
+      position: absolute;
+      z-index: 1;
+      bottom: -46px;
+  }
+  .fox .head:before{
+      left: -46px;
+  }
+  .fox .head:after{
+      right: -46px;
+  }
+  .fox .head .eye{
+      width: 9px;
+      height: 4.5px;
+      display: block;
+      background: #000;
+      border-radius: 9px 9px 0 0;
+      position: absolute;
+      z-index: 2;
+      bottom: 20px;
+      animation: piscar 5s step-start 0s infinite;
+      -webkit-animation: piscar 5s step-start 0s infinite;
+  }
+  .fox .head .eye:nth-child(odd){
+      left: 18.5px;
+      transform: rotate(45deg);
+      -moz-transform: rotate(45deg); 
+      -webkit-transform: rotate(45deg); 
+  }
+  .fox .head .eye:nth-child(even){
+      right: 18.5px;
+      transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg); 
+      -webkit-transform: rotate(-45deg); 
+  }
+  .fox .ear{
+      width: 46.5px;
+      height: 46.5px;
+      display: block;
+      background: #9ba5d3;
+      position: absolute;
+      top: 0px;
+  }
+  .fox .ear:nth-child(odd){
+      border-radius: 0 46.5px 0 0;
+      left: 15.5px;
+  }
+  .fox .ear:nth-child(even){
+      border-radius: 46.5px 0 0 0;
+      right: 0px;
+  }
+  .fox .nose{
+      width: 13.5px;
+      height: 13.5px;
+      display: block;
+      background: #000;
+      border-radius: 50%;
+      position: absolute;
+      z-index: 3;
+      top: 84.5px;
+      right: 39px;
+  }
+  .fox .body{
+      width: 53.5px;
+      height: 107px;
+      display: block;
+      background: #596ab4;
+      border-radius: 0 107px 107px 0;
+      position: absolute;
+      z-index: 1;
+      bottom: 0px;
+      right: 0px;
+  }
+  .fox .tail{
+      width: 107.5px;
+      height: 53.5px;
+      display: block;
+      background: #596ab4;
+      border-radius: 0 0 107px 107px;
+      position: absolute;
+      z-index: 1;
+      bottom: 0px;
+      right: 0px;
+      overflow: hidden;
+  }
+  .fox .tail:before{
+      content: '';
+      width: 28.5px;
+      height: 28.5px;
+      display: block;
+      background: #cdd1e8;
+      border-radius: 50%;
+      position: absolute;
+      top: -15px;
+      left: -15px;
+  }
+  
+  
+  .fox:hover .head, .fox:hover .ear{
+      transform: rotate(15deg);
+      -moz-transform: rotate(15deg); 
+      -webkit-transform: rotate(15deg); 
+  }
+  .fox:hover .ear:nth-child(odd) {
+      left: 24px;
+  }
+  .fox:hover .ear:nth-child(even) {
+      right: -1.5px;
+      top: 10px;
+  }
+  .fox:hover .nose {
+      width: 12px;
+      height: 12px;
+      top: 82.5px;
+      right: 51.5px;
+  }
+  
+  @keyframes piscar {
+    15% {
+      height: 1px;
+    }
+    45% {
+      height: 9px;
+    }
+    50% {
+      height: 1px;
+    }
+  }
+  @-webkit-keyframes piscar {
+    15% {
+      height: 1px;
+    }
+    45% {
+      height: 9px;
+    }
+    50% {
+      height: 1px;
+    }
+  }
+
+/* REACT CODE*/
+/*
+<div className='card'>
+    <div className="fox">
+        <div className="head">
+            <div className="eye"></div>
+            <div className="eye"></div>
+        </div>
+        <div className="ear"></div>
+        <div className="ear"></div>
+        <div className="nose"></div>
+        <div className="body"></div>
+        <div className="tail"></div>
+    </div> 
+</div>  
+*/

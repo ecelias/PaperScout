@@ -1,8 +1,69 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-transition: all 100ms ease-in;
+  transition: all 100ms ease-in;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  place-items: start;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  text-align: left;
+}
+
+.parent-block {
+  margin: 1rem;
+  padding: 2rem 2rem;
+  text-align: left;
+}
+.child-block {
+  display: inline-block;
+  padding: 1rem 1rem;
+  vertical-align: middle;
+}
+.parent {
+  display: flex;
+  width: 100%;
+}
+
+.child {
+  margin: 0;
+  padding: 0;
+}
+
+.child:first-child {
+  width: 70%;
+  margin-right: 10px;
+}
+
+.child:second-child {
+  margin-left: 20px;
+}
+
+.welcome-text {
+  h1 {
+    font-size: 3.2em;
+    line-height: 0.3;
+  }
+  h3{
+    font-size: 1.5em;
+    line-height: 0.3;
+  }
+  p{
+    font-size: 1em;
+    line-height: 0.3;
+  }
 }
 
 .logo {
@@ -35,8 +96,8 @@
 
 .card {
   padding: 2em;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensures the card has height for centering */
 }
 
-.read-the-docs {
-  color: #888;
-}
