@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Sidebar from './assets/userDashboard/Sidebar.jsx';
 import DashboardHeader from './assets/userDashboard/DashboardHeader';
+import AboutShortcut from './assets/userDashboard/AboutShortcut';
 import ActiveSearches from './assets/userDashboard/ActiveSearches';
 import PastSearches from './assets/userDashboard/PastSearches';
 import UpdatesPanel from './assets/userDashboard/UpdatesPanel';
@@ -27,10 +28,18 @@ function Dashboard() {
       <div className="main-content">
         <DashboardHeader activeSearches={userData.activeSearches.length} />
         <div className="stats-section">
+          <AboutShortcut />
           <ActiveSearches searches={userData.activeSearches} />
-          <UpdatesPanel updates={userData.updates} />
         </div>
-        <PastSearches searches={userData.pastSearches} />
+        <div className="stats-section"><PastSearches searches={userData.pastSearches} />
+        <UpdatesPanel updates={userData.updates} />
+        </div>
+
+        {/* Footer text aligned at the bottom of the main content */}
+        <div className="dash-footer">
+          @ 2025, Made with <span className="heart">❤️</span> by{" "}
+          <span className="author-name">Elizabeth Elias</span>
+        </div>
       </div>
     </div>
   );

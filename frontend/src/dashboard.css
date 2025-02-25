@@ -1,35 +1,110 @@
 
-/* dashboard.css */
+:root {
+  /* Primary Colors */
+  --primary-text: #010C16;
+  --background-light: #EFF2E9;
+  --background-dark: #010C16;
+  --dark-bg-text: #EFF2E9;
+
+  --button-bg: #CFD7CB;
+  --button-hover-bg: #90ae86;
+  --dark-button-hover-bg: #07355f;
+  --dark-button-bg: #010C16;
+  --dark-button-text: #EFF2E9;
+  --light-button-bg: #CFD7CB;
+  --light-button-text: #010C16;
+  
+  --nav-bg: #B5C2B1;
+  --nav-text: #010C16;
+  --footer-bg: #B5C2B1;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 .dashboard-container {
+  display: flex;
+  height: 100vh;
+  background-color: var(--background-light);
+}
+  
+.sidebar {
+    width: 250px;
+    background-color: var(--light-button-bg);
+    padding: 30px 20px;
+    border-radius: 20px 0 0 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+  
+  .logo-section {
     display: flex;
-    height: 100vh;
-    background-color: #f5f8f6;
+    flex-direction: column;
+    align-items: center;
   }
   
-  .sidebar {
-    width: 250px;
-    background-color: #eaf1ef;
-    padding: 20px;
+  .logo {
+    width: 50px;
+    margin-bottom: 10px;
   }
   
   .sidebar h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    color: var(--primary-text);
   }
   
-  .sidebar ul {
+  .account-title {
+    font-size: 14px;
+    color: var(--primary-text);
+    margin-top: 20px;
+    letter-spacing: 1px;
+  }
+  
+  .nav-section {
     list-style: none;
     padding: 0;
+    margin-top: 20px;
   }
   
-  .sidebar ul li {
+  .nav-section li {
+    display: flex;
+    align-items: center;
     margin: 15px 0;
-    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .nav-section li .icon {
+    margin-right: 12px;
+    font-size: 18px;
+    color: var(--button-hover-bg);
+  }
+  
+  .nav-section li a {
+    text-decoration: none;
+    color: var(--primary-text);
+    transition: color 0.3s ease;
+  }
+  
+  .nav-section li a:hover {
+    color: var(--button-hover-bg);
+    font-weight: 600;
+  }
+  
+  .nav-section li.active {
+    background-color: #eaf1ef;
+    border-radius: 10px;
+    padding: 10px;
   }
   
   .main-content {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
-    padding: 30px;
     overflow-y: auto;
   }
   
@@ -38,6 +113,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
+    padding: 30px;
   }
   
   .header-item {
@@ -48,11 +124,22 @@
   }
   
   .new-search-btn {
-    background-color: #3b9c8e;
-    color: #fff;
+    background-color: var(--button-bg);
+    color: var(--primary-text);
     padding: 15px 25px;
-    border: none;
-    border-radius: 10px;
+    border: 1px solid var(--primary-text);
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .new-search-btn:hover{
+    background-color: var(--button-hover-bg);
+    color: var(--primary-text);
+    padding: 15px 25px;
+    border: 1px solid var(--primary-text);
+    border-radius: 8px;
+    font-size: 14px;
     cursor: pointer;
   }
   
@@ -60,18 +147,48 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
+    flex-shrink: 0;
+    padding: 30px;
   }
   
   .active-searches, .updates-panel, .past-searches {
     background-color: #fff;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 48%;
   }
+
+  .about-shortcut {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 48%;
+  }
+
+  .about-shortcut h3{
+    font-weight:normal;
+  }
+
+  .about-shortcut p{
+    color: gray
+  }
+
+  .about-button {
+    background-color: #fff;
+    border: none;
+    color: var(--primary-text);
+  }
+
+  .about-button:hover {
+    color: var(--button-hover-bg);
+    transition: background-color 0.3s ease;
+  }
   
   .past-searches table {
     width: 100%;
+    padding: 30px;
     border-collapse: collapse;
   }
   
@@ -83,5 +200,25 @@
   
   .past-searches th {
     background-color: #f0f5f4;
+  }
+
+  .dash-footer {
+    margin-top: auto; /* Pushes footer to bottom */
+    text-align: left;
+    font-size: 13px;
+    color: var(--primary-text);
+    background-color: var(--background-light);
+    padding: 5px 0 5px 0;
+    border-top: 1px solid #e2e8f0;
+    padding: 15px;
+  }
+  
+  .dash-footer .heart {
+    color: red;
+  }
+  
+  .dash-footer .author-name {
+    color: var(--button-hover-bg);
+    font-weight: 600;
   }
   
